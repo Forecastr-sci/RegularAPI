@@ -19,7 +19,7 @@ def get_user(user_id):
 
     response = {"status_code": 200, "result": user_data}
     # return jsonified user data together with 200 - a status code for successful response
-    return jsonify(response)
+    return jsonify(response), 200
 
 # an example of a POST route
 @app.route("/create_user", methods=["POST"])
@@ -27,7 +27,7 @@ def create_user():
     data = request.get_json()
     # Here we would ideally have writing the data to the database, but this is only a demo
     response = {"status_code": 201, "result": data}
-    return jsonify(response)
+    return jsonify(response), 201
 
 if __name__ == "__main__":
     app.run(debug=True)
