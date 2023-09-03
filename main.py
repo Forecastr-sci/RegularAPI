@@ -16,8 +16,9 @@ def get_user(user_id):
     if extra:
         user_data["extra"] = extra
 
+    response = {"status_code": 200, "result": user_data}
     # return jsonified user data together with 200 - a status code for successful response
-    return jsonify(user_data), 200
+    return jsonify(response)
 
 if __name__ == "__main__":
     app.run(debug=True)
